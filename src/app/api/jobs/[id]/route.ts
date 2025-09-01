@@ -5,7 +5,7 @@ import { PrismaClient } from '@prisma/client';
 
 export async function PUT(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   const prisma = new PrismaClient();
   
@@ -17,7 +17,7 @@ export async function PUT(
     }
 
     const body = await request.json();
-    const jobId = params.id;
+    const { id: jobId } = await params;
     const userId = session.user.id as string;
 
     // Verify job belongs to user
@@ -53,7 +53,7 @@ export async function PUT(
 
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   const prisma = new PrismaClient();
   
@@ -64,7 +64,7 @@ export async function DELETE(
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
-    const jobId = params.id;
+    const { id: jobId } = await params;
     const userId = session.user.id as string;
 
     const deletedJob = await prisma.jobApplication.deleteMany({
