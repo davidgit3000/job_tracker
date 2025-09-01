@@ -35,6 +35,11 @@ export default function DashboardPage() {
     }
   }, [session]);
 
+  // Apply filters whenever jobs, searchQuery, statusFilter, or dateFilter change
+  useEffect(() => {
+    applyFilters(searchQuery, statusFilter, dateFilter);
+  }, [jobs, searchQuery, statusFilter, dateFilter]);
+
   const fetchJobs = async () => {
     try {
       const response = await fetch('/api/jobs');
@@ -60,13 +65,11 @@ export default function DashboardPage() {
   const handleJobUpdated = (updatedJob: JobApplication) => {
     const updatedJobs = jobs.map(job => job.id === updatedJob.id ? updatedJob : job);
     setJobs(updatedJobs);
-    applyFilters(searchQuery, statusFilter, dateFilter);
   };
 
   const handleJobDeleted = (deletedJobId: string) => {
     const updatedJobs = jobs.filter(job => job.id !== deletedJobId);
     setJobs(updatedJobs);
-    applyFilters(searchQuery, statusFilter, dateFilter);
   };
 
   const applyFilters = (searchQuery: string, statusFilter: string, dateFilter: string) => {
