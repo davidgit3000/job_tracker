@@ -312,19 +312,25 @@ export default function DashboardPage() {
                 {statusFilter && (
                   <Badge variant="secondary" className="flex items-center gap-1">
                     Status: {statusFilter}
-                    <X 
-                      className="h-3 w-3 cursor-pointer hover:text-gray-700" 
+                    <button 
+                      className="ml-1 hover:bg-gray-200 rounded-full p-0.5 transition-colors"
                       onClick={() => handleStatusFilter('')}
-                    />
+                      type="button"
+                    >
+                      <X className="h-3 w-3" />
+                    </button>
                   </Badge>
                 )}
                 {dateFilter && (
                   <Badge variant="secondary" className="flex items-center gap-1">
                     Date: {getDateFilterLabel(dateFilter)}
-                    <X 
-                      className="h-3 w-3 cursor-pointer hover:text-gray-700" 
+                    <button 
+                      className="ml-1 hover:bg-gray-200 rounded-full p-0.5 transition-colors"
                       onClick={() => handleDateFilter('')}
-                    />
+                      type="button"
+                    >
+                      <X className="h-3 w-3" />
+                    </button>
                   </Badge>
                 )}
               </div>
