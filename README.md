@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Job Tracker App
 
-## Getting Started
+A modern web application for tracking job applications built with Next.js, TailwindCSS, Shadcn UI, and PostgreSQL.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Simple Authentication**: Login with username and first name only
+- **Job Management**: Add, edit, and delete job applications
+- **Comprehensive Tracking**: Track job title, company, URL, location, date applied, status, and notes
+- **Responsive Design**: Works seamlessly on desktop, laptop, and mobile devices
+- **Modern UI**: Built with Shadcn UI components and TailwindCSS
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Frontend**: Next.js 15, TypeScript, TailwindCSS, Shadcn UI
+- **Backend**: Next.js API Routes
+- **Database**: PostgreSQL with Neon (cloud database)
+- **Authentication**: NextAuth.js
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Usage
 
-## Learn More
+1. **Login**: Enter your username and first name to access the app
+2. **Add Jobs**: Click "Add Job" to create new job application entries
+3. **Edit Jobs**: Click the edit button on any row to modify job details
+4. **Delete Jobs**: Click the delete button to remove job applications
+5. **Track Status**: Update job status as your applications progress
 
-To learn more about Next.js, take a look at the following resources:
+## Responsive Design
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The application is fully responsive with:
+- **Desktop/Laptop**: Full table view with all columns visible
+- **Tablet**: Some columns hidden for better readability
+- **Mobile**: Optimized layout with essential information prioritized
